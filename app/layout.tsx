@@ -3,6 +3,10 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import React from "react";
+import { Nunito, Playfair_Display } from "next/font/google";
+
+const nunito = Nunito({ subsets: ["latin"], variable: "--font-nunito" });
+const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
     title: "UNIC Law Firm",
@@ -16,7 +20,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-        <body className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
+        <body className={`${nunito.variable} ${playfair.variable} bg-slate-50 text-slate-900`}>
         <Navbar />
         <div className="flex-1">{children}</div>
         <Footer />

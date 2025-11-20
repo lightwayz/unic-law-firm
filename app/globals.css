@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
+html, body {
   margin: 0;
-  font-family: system-ui, sans-serif;
-  background-color: #020617; /* unicDark */
-  color: #f8fafc;
+  padding: 0;
+  @apply bg-slate-50 text-slate-900;
 }
 
 * {

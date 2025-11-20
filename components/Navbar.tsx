@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const links = [
@@ -11,7 +13,6 @@ const links = [
     { href: "/library", label: "Library" },
     { href: "/file-case", label: "File a Case" },
     { href: "/about", label: "About" },
-    { href: "/admin", label: "Admin" },
 ];
 
 export default function Navbar() {
@@ -19,36 +20,38 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     return (
-        <header className="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
-            <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-                <Link href="/" className="flex items-center gap-2">
-          <span className="text-lg font-bold tracking-tight">
-            <span className="text-unicGold">UNIC</span> Law Firm
-          </span>
+        <header className="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-200">
+            <nav className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+
+                {/* Logo + Name */}
+                <Link href="/" className="flex items-center gap-3">
+                    <Image
+                        src="/logo.jpeg"
+                        alt="UNIC Law Firm"
+                        width={42}
+                        height={42}
+                        className="object-contain"
+                    />
+                    <div>
+                        <h1 className="text-xl font-semibold text-unicPurple">uniclawfirm</h1>
+                        <p className="text-xs text-gray-500 -mt-1">
+                            Defending What Matters Most
+                        </p>
+                    </div>
                 </Link>
 
-                <button
-                    className="lg:hidden border border-slate-700 rounded px-2 py-1 text-sm"
-                    onClick={() => setOpen((v) => !v)}
-                >
-                    Menu
-                </button>
-
-                <div
-                    className={`${
-                        open ? "flex" : "hidden"
-                    } lg:flex flex-col lg:flex-row gap-2 lg:gap-4 items-start lg:items-center text-sm`}
-                >
+                {/* Desktop Links */}
+                <div className="hidden lg:flex items-center gap-6 text-sm">
                     {links.map((link) => {
                         const active = pathname === link.href;
                         return (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`px-3 py-1 rounded-full ${
+                                className={`transition font-medium ${
                                     active
-                                        ? "bg-unicGold text-slate-950"
-                                        : "text-slate-200 hover:bg-slate-800"
+                                        ? "text-unicPurple border-b-2 border-unicPurple pb-1"
+                                        : "text-gray-700 hover:text-unicPurple"
                                 }`}
                             >
                                 {link.label}
@@ -56,7 +59,38 @@ export default function Navbar() {
                         );
                     })}
                 </div>
+
+                {/* Mobile Button */}
+                <button
+                    className="lg:hidden text-unicPurple"
+                    onClick={() => setOpen(!open)}
+                >
+                    {open ? <X size={26} /> : <Menu size={26} />}
+                </button>
             </nav>
+
+            {/* Mobile Menu */}
+            {open && (
+                <div className="lg:hidden bg-white border-t border-gray-200 px-6 py-4">
+                    <div className="flex flex-col gap-4">
+                        {links.map((link) => {
+                            const active = pathname === link.href;
+                            return (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className={`font-medium ${
+                                        active ? "text-unicPurple" : "text-gray-700"
+                                    }`}
+                                    onClick={() => setOpen(false)}
+                                >
+                                    {link.label}
+                                </Link>
+                            );
+                        })}
+                    </div>
+                </div>
+            )}
         </header>
     );
 }
