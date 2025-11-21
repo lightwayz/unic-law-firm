@@ -18,7 +18,7 @@ export default function HomePage() {
               transition={{ duration: 0.9 }}
           >
             <Image
-                src="/logo.png"
+                src="/logo.jpeg"
                 width={90}
                 height={90}
                 alt="UNIC Logo"
@@ -31,7 +31,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-gray-700 text-lg max-w-lg leading-relaxed mb-8">
-              UNIC Law Firm merges legal excellence with modern, paperless
+              UNIC LAW FIRM merges legal excellence with modern, paperless
               technology. Experience clarity, confidence, and seamless access
               to justice — all in one intelligent platform.
             </p>
@@ -65,7 +65,7 @@ export default function HomePage() {
               our team — all from your secure online portal.
             </p>
             <Image
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="UNIC Overlay"
                 width={60}
                 height={60}
@@ -139,7 +139,7 @@ export default function HomePage() {
           </div>
 
           <Link
-              href="/judgments"
+              href="/Judgements"
               className="inline-flex items-center gap-2 mt-6 font-semibold text-unicPurple hover:text-unicPurpleLite transition"
           >
             View all judgments
@@ -152,7 +152,7 @@ export default function HomePage() {
             Ready to Begin Your Legal Journey?
           </h2>
           <p className="text-sm md:text-base text-gray-200 max-w-2xl mx-auto mb-8">
-            Whether you're filing a case, researching legal precedents,
+            Whether you&#39;re filing a case, researching legal precedents,
             or collaborating with our team — UNIC Law Firm is fully equipped
             for a digital-first experience.
           </p>

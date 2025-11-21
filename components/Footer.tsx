@@ -7,8 +7,8 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-14">
                 {/* Brand */}
                 <div>
-                    <Image src="/logo.png" alt="UNIC Logo" width={50} height={50} />
-                    <h3 className="text-xl font-semibold mt-4">uniclawfirm</h3>
+                    <Image src="/logo.jpeg" alt="UNIC Logo" width={50} height={50} />
+                    <h3 className="text-xl font-semibold mt-4">UNIC LAW FIRM</h3>
                     <p className="text-sm text-gray-300 mt-1">
                         Defending What Matters Most
                     </p>

@@ -33,7 +33,7 @@ export default function Navbar() {
                         className="object-contain"
                     />
                     <div>
-                        <h1 className="text-xl font-semibold text-unicPurple">uniclawfirm</h1>
+                        <h1 className="text-xl font-semibold text-unicPurple">UNIC LAW FIRM</h1>
                         <p className="text-xs text-gray-500 -mt-1">
                             Defending What Matters Most
                         </p>
